@@ -194,7 +194,7 @@ export default function App() {
                 </div>
               </div>
               <a
-                href="https://github.com/farhanhossien/Farhan-TV/releases/latest/download/app-release.apk"
+                href="https://github.com/farhanhossien/Farhan-TV/releases/latest/download/Farhan%20TV.apk"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-teal-500 hover:bg-teal-600 text-[#070913] p-1.5 rounded-lg transition-all active:scale-95 cursor-pointer flex items-center justify-center"

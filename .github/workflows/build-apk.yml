@@ -36,7 +36,7 @@ jobs:
           cd android
           chmod +x gradlew
           ./gradlew assembleDebug
-          mv app/build/outputs/apk/debug/app-debug.apk "../Farhan TV.apk"
+          mv app/build/outputs/apk/debug/app-debug.apk "../Farhan.TV.apk"
 
       - name: Delete old release
         run: |
@@ -52,6 +52,6 @@ jobs:
           draft: false
           prerelease: false
           files: |
-            Farhan TV.apk
+            Farhan.TV.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

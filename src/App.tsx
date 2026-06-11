@@ -7,7 +7,7 @@ import { CATEGORY_FILTERS, filterChannels } from "./utils/channelUtils";
 import VideoPlayer from "./components/VideoPlayer";
 
 export default function App() {
-  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedCategory, setSelectedCategory] = useState("fifa-2026");
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
@@ -36,12 +36,12 @@ export default function App() {
     logo: string;
     group: string;
   }>(() => {
-    const firstChan = sortedDefaultChannels[0] || CHANNELS_DATA[0];
+    const ptvChan = CHANNELS_DATA.find(c => c.name.toLowerCase() === "ptv sports") || sortedDefaultChannels[0] || CHANNELS_DATA[0];
     return {
-      url: firstChan.url,
-      name: firstChan.name,
-      logo: firstChan.logo,
-      group: firstChan.group
+      url: ptvChan.url,
+      name: ptvChan.name,
+      logo: ptvChan.logo,
+      group: ptvChan.group
     };
   });
 

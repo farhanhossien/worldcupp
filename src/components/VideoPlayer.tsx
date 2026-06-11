@@ -11,8 +11,39 @@ interface VideoPlayerProps {
 }
 
 export default function VideoPlayer({ url, name, logo, group }: VideoPlayerProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const hlsRef = useRef<Hls | null>(null);
+
+  // Lock orientation to landscape when entering fullscreen
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      const isFullscreen =
+        document.fullscreenElement === containerRef.current ||
+        (document as any).webkitFullscreenElement === containerRef.current ||
+        document.fullscreenElement === videoRef.current ||
+        (document as any).webkitFullscreenElement === videoRef.current;
+
+      if (isFullscreen) {
+        if (screen.orientation && typeof (screen.orientation as any).lock === "function") {
+          (screen.orientation as any).lock("landscape").catch((err: any) => {
+            console.warn("Screen orientation lock failed:", err);
+          });
+        }
+      } else {
+        if (screen.orientation && typeof (screen.orientation as any).unlock === "function") {
+          (screen.orientation as any).unlock();
+        }
+      }
+    };
+
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+    document.addEventListener("webkitfullscreenchange", handleFullscreenChange);
+    return () => {
+      document.removeEventListener("fullscreenchange", handleFullscreenChange);
+      document.removeEventListener("webkitfullscreenchange", handleFullscreenChange);
+    };
+  }, []);
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
@@ -151,15 +182,27 @@ export default function VideoPlayer({ url, name, logo, group }: VideoPlayerProps
 
   // Fullscreen
   const toggleFullscreen = () => {
+    const container = containerRef.current;
     const video = videoRef.current;
-    if (!video) return;
+    if (!container || !video) return;
 
-    if (video.requestFullscreen) {
-      video.requestFullscreen();
-    } else if ((video as any).webkitRequestFullscreen) {
-      (video as any).webkitRequestFullscreen();
-    } else if ((video as any).msRequestFullscreen) {
-      (video as any).msRequestFullscreen();
+    const requestFS =
+      container.requestFullscreen ||
+      (container as any).webkitRequestFullscreen ||
+      (container as any).mozRequestFullScreen ||
+      (container as any).msRequestFullscreen;
+
+    if (requestFS) {
+      requestFS.call(container);
+    } else {
+      const videoRequestFS =
+        video.requestFullscreen ||
+        (video as any).webkitRequestFullscreen ||
+        (video as any).mozRequestFullScreen ||
+        (video as any).msRequestFullscreen;
+      if (videoRequestFS) {
+        videoRequestFS.call(video);
+      }
     }
   };
 
@@ -176,6 +219,7 @@ export default function VideoPlayer({ url, name, logo, group }: VideoPlayerProps
 
   return (
     <div
+      ref={containerRef}
       className="relative w-full h-full max-w-full max-h-full rounded-2xl overflow-hidden bg-zinc-950 border border-zinc-800 shadow-2xl group flex flex-col justify-center items-center"
       onMouseMove={() => setShowControls(true)}
       onMouseLeave={() => setShowControls(false)}

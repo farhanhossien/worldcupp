@@ -1,5 +1,5 @@
 {
-  "name": "Farhan TV",
+  "name": "Venom TV",
   "description": "A comprehensive television channel streaming web app featuring Bangladeshi, Indian, Sports, and International live TV channels with a special FIFA World Cup sports section and custom media player.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]

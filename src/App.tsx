@@ -70,7 +70,7 @@ export default function App() {
       <header className="w-full max-w-full mx-auto px-4 md:px-8 lg:px-10 py-3 flex flex-col md:flex-row items-center justify-between gap-4 border-b border-slate-900/60 shrink-0">
         <div className="flex items-center gap-3 select-none">
           <div className="bg-red-600 text-white font-extrabold italic px-3.5 py-1 rounded-lg text-xl tracking-tighter shadow-md shadow-red-600/20">
-            Farhan TV
+            Venom TV
           </div>
           <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-widest font-mono hidden sm:inline">Portal</span>
         </div>
@@ -127,7 +127,7 @@ export default function App() {
         <span className="font-bold shrink-0 text-[#2dd4bf] mr-1">প্রিয় ভিউয়ার:</span>
         <div className="flex-1 overflow-hidden relative flex items-center h-4">
           <div className="animate-marquee absolute whitespace-nowrap text-[#2dd4bf] font-semibold text-[11px] leading-4">
-            ফারহান টিভিতে আপনাকে স্বাগতম। যেকোনো চ্যানেল দেখতে নিচে স্ক্রোল করুন ও ক্লিক করুন। সম্পূর্ণ ফ্রিতে উপভোগ করুন দেশী-বিদেশী সকল জনপ্রিয় টিভি চ্যানেল ও স্পোর্টস লাইভ স্ট্রিম। ⚽ ফিফা ২০২৬-এর স্পেশাল কভারেজ দেখতে সরাসরি ক্যাটাগরি ফিল্টার করুন!
+            ভেনম টিভিতে আপনাকে স্বাগতম। যেকোনো চ্যানেল দেখতে নিচে স্ক্রোল করুন ও ক্লিক করুন। সম্পূর্ণ ফ্রিতে উপভোগ করুন দেশী-বিদেশী সকল জনপ্রিয় টিভি চ্যানেল ও স্পোর্টস লাইভ স্ট্রিম। ⚽ ফিফা ২০২৬-এর স্পেশাল কভারেজ দেখতে সরাসরি ক্যাটাগরি ফিল্টার করুন!
           </div>
         </div>
       </div>

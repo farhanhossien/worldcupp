@@ -31,7 +31,7 @@
             android:layout_width="160dp"
             android:layout_height="160dp"
             android:src="@mipmap/ic_launcher"
-            android:contentDescription="Farhan TV Logo" />
+            android:contentDescription="Venom TV Logo" />
 
         <ProgressBar
             android:id="@+id/loading_progress"

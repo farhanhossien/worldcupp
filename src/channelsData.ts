@@ -182,12 +182,6 @@ export const CHANNELS_DATA: Channel[] = [
     "url": "https://tvsen6.aynaott.com/ekattorbdtv/index.m3u8?e=1779283770&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=dc7810d37e97e9d5ef235e0781255c24"
   },
   {
-    "name": "T Sports HD",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/T_Sports_logo.svg/500px-T_Sports_logo.svg.png",
-    "group": "Sports",
-    "url": "https://tvsen7.aynaott.com/tsports-hd/index.m3u8?e=1779283784&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=3b4c5a2cfa872fa7f91ffbfb4aa0f658"
-  },
-  {
     "name": "Wion",
     "logo": "https://s3.aynaott.com/storage/671cfb22f8d0362ae01403b6e748f2e2",
     "group": "News",
@@ -890,7 +884,7 @@ export const FIFA_WORLD_CUP_HIGHLIGHTS: MatchHighlight[] = [
     id: "match-4",
     title: "Spain vs Netherlands (1-0 AET) - FIFA World Cup South Africa 2010 Final",
     coverImage: "https://images.unsplash.com/photo-1431324155629-1a6edd1ec131?auto=format&fit=crop&q=80&w=800",
-    url: "https://tvsen7.aynaott.com/tsports-hd/index.m3u8?e=1779283784&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=3b4c5a2cfa872fa7f91ffbfb4aa0f658", // Using T Sports HD stream
+    url: "https://tvsen7.aynaott.com/tsports-hd/index.m3u8?e=1779283784&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=3b4c5a2cfa872fa7f91ffbfb4aa0f658", // Using fallback sports stream
     duration: "09:55",
     year: "2010"
   },
